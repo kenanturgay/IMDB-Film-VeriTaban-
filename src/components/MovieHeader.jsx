@@ -1,16 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const MovieHeader = (props) => {
-  const appTitle = 'Title buraya gelecek';
-  const displayFavorites = true;
+  const appTitle = useSelector((store) => store.movieReducer.appTitle);
+  const displayFavorites =useSelector(store=>store.favoritesReducer.displayFavorites);;
 
   return (
     <div className="flex justify-between items-center shadow rounded-md bg-white p-2 pl-3 my-3">
       <h2 className="text-zinc-600">{appTitle}</h2>
       <div className="flex items-center gap-2">
         <div className="myButton bg-blue-600 hover:bg-blue-500">
-          <span>Favorileri {displayFavorites ? 'gizle' : 'göster'}</span>
+          <span>Favorileri {displayFavorites ? "gizle" : "göster"}</span>
         </div>
         <Link to="/movies" className="myButton bg-blue-600 hover:bg-blue-500">
           Tüm filmler

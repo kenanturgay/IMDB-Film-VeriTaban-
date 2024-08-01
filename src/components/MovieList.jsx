@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import MovieListItem from "./MovieListItem";
-import MovieFooter from "./MovieFooter";
-import { useSelector } from "react-redux";
+import MovieListItem from './MovieListItem';
+import MovieFooter from './MovieFooter';
+import { useSelector } from 'react-redux';
 
 const MovieList = (props) => {
   const movies = useSelector((store) => store.movieReducer.movies);

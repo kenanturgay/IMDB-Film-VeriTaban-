@@ -9,10 +9,10 @@ const Movie = (props) => {
   const { push } = useHistory();
   const dispatch = useDispatch();
 
-  const movies = useSelector((store) => store.movieRecuder.movie);
-  
+  const movies = useSelector((store) => store.movieReducer.movies);
   const movie = movies.find((movie) => movie.id === Number(id));
-
+  
+  
   return (
     <div className="bg-white rounded-md shadow flex-1">
       <div className="p-5 pb-3 border-b border-zinc-200">
@@ -47,7 +47,7 @@ const Movie = (props) => {
           onClick={() => {
             dispatch(deleteMovie(movie.id));
             dispatch(removeFavorite(movie.id));
-            push("./moies/");
+            push("/movies/");
           }}
         >
           Sil

@@ -2,7 +2,7 @@ import { ADD_FAVORITE, REMOVE_FAVORITE, TOGGLE_FAVORITES } from "../actions/favo
 
 const initialState = {
   favorites: [],
-  disPlayFavorites: true,
+  displayFavorites: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,17 +20,21 @@ const reducer = (state = initialState, action) => {
     case TOGGLE_FAVORITES:
         return {
             ...state,
-            disPlayFavorites: !state.disPlayFavorites,
+            displayFavorites: !state.displayFavorites,
         };
     
     case REMOVE_FAVORITE:
-        return {
-            ...state,
-            favorites: state.favorites.filter((fav) => fav.id !== action.payload.id),
-        };
+      return {
+        ...state,
+        displayFavorites: !state.displayFavorites,
+      };
     default:
       return state;
   }
 };
 
 export default reducer;
+
+   
+      
+   
